@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'homepage#index'
+  
   resources :order_products
   resources :orders
   resources :products
