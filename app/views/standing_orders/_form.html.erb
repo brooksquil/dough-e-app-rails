@@ -1,0 +1,32 @@
+<%= form_with(model: standing_order, local: true) do |form| %>
+  <% if standing_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(standing_order.errors.count, "error") %> prohibited this standing_order from being saved:</h2>
+
+      <ul>
+      <% standing_order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :week_day %>
+    <%= form.text_area :week_day, id: :standing_order_week_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :standing_order_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_active %>
+    <%= form.check_box :is_active, id: :standing_order_is_active %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

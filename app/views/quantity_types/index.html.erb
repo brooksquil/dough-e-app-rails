@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quantity Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quantity_types.each do |quantity_type| %>
+      <tr>
+        <td><%= quantity_type.name %></td>
+        <td><%= quantity_type.quantity %></td>
+        <td><%= link_to 'Show', quantity_type %></td>
+        <td><%= link_to 'Edit', edit_quantity_type_path(quantity_type) %></td>
+        <td><%= link_to 'Destroy', quantity_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quantity Type', new_quantity_type_path %>
