@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery_date: 2017-12-26
+  company: one
+  user: one
+  payment_id: one
+
+two:
+  delivery_date: 2017-12-26
+  company: two
+  user: two
+  payment_id: two

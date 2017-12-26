@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Standing Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week day</th>
+      <th>Quantity</th>
+      <th>Is active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @standing_orders.each do |standing_order| %>
+      <tr>
+        <td><%= standing_order.week_day %></td>
+        <td><%= standing_order.quantity %></td>
+        <td><%= standing_order.is_active %></td>
+        <td><%= link_to 'Show', standing_order %></td>
+        <td><%= link_to 'Edit', edit_standing_order_path(standing_order) %></td>
+        <td><%= link_to 'Destroy', standing_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Standing Order', new_standing_order_path %>

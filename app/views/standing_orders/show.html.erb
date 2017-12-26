@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Week day:</strong>
+  <%= @standing_order.week_day %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @standing_order.quantity %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @standing_order.is_active %>
+</p>
+
+<%= link_to 'Edit', edit_standing_order_path(@standing_order) %> |
+<%= link_to 'Back', standing_orders_path %>

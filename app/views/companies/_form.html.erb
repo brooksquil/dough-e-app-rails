@@ -1,0 +1,92 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_area :company_name, id: :company_company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_address %>
+    <%= form.text_area :shipping_address, id: :company_shipping_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_address_2 %>
+    <%= form.text_area :shipping_address_2, id: :company_shipping_address_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_city %>
+    <%= form.text_area :shipping_city, id: :company_shipping_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_state %>
+    <%= form.text_area :shipping_state, id: :company_shipping_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_zipcode %>
+    <%= form.text_field :shipping_zipcode, id: :company_shipping_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_notes %>
+    <%= form.text_area :shipping_notes, id: :company_shipping_notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billing_street_address %>
+    <%= form.text_area :billing_street_address, id: :company_billing_street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billing_address_2 %>
+    <%= form.text_area :billing_address_2, id: :company_billing_address_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billing_state %>
+    <%= form.text_area :billing_state, id: :company_billing_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billing_zipcode %>
+    <%= form.text_area :billing_zipcode, id: :company_billing_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_phone %>
+    <%= form.text_area :company_phone, id: :company_company_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_email %>
+    <%= form.text_area :company_email, id: :company_company_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_terms %>
+    <%= form.text_area :payment_terms, id: :company_payment_terms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_active %>
+    <%= form.check_box :is_active, id: :company_is_active %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

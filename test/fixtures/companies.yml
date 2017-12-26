@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_name: MyText
+  shipping_address: MyText
+  shipping_address_2: MyText
+  shipping_city: MyText
+  shipping_state: MyText
+  shipping_zipcode: MyString
+  shipping_notes: MyText
+  billing_street_address: MyText
+  billing_address_2: MyText
+  billing_state: MyText
+  billing_zipcode: MyText
+  company_phone: MyText
+  company_email: MyText
+  payment_terms: MyText
+  is_active: false
+
+two:
+  company_name: MyText
+  shipping_address: MyText
+  shipping_address_2: MyText
+  shipping_city: MyText
+  shipping_state: MyText
+  shipping_zipcode: MyString
+  shipping_notes: MyText
+  billing_street_address: MyText
+  billing_address_2: MyText
+  billing_state: MyText
+  billing_zipcode: MyText
+  company_phone: MyText
+  company_email: MyText
+  payment_terms: MyText
+  is_active: false

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quantity_type.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @quantity_type.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_quantity_type_path(@quantity_type) %> |
+<%= link_to 'Back', quantity_types_path %>

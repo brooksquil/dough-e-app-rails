@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment_type: MyText
+  account_number: MyText
+  company: one
+
+two:
+  payment_type: MyText
+  account_number: MyText
+  company: two

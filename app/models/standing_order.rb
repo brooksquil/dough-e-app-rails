@@ -1,0 +1,2 @@
+class StandingOrder < ApplicationRecord
+end
