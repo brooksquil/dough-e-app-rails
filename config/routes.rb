@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  get '/admin_menu' => 'admin_menu#index'
+  get '/customer_menu' => 'customer_menu#index'
 end
