@@ -4,7 +4,11 @@ class ProductTypesController < ApplicationController
   # GET /product_types
   # GET /product_types.json
   def index
-    @product_types = ProductType.all
+    @product_type = if params[:term]
+    ProductType.where('name LIKE ?', "%#{params[:term]}%")
+  else
+    @product_type = ProductType.all
+  end
   end
 
   # GET /product_types/1

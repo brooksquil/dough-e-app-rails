@@ -22,4 +22,10 @@ Rails.application.routes.draw do
 
   get '/admin_menu' => 'admin_menu#index'
   get '/customer_menu' => 'customer_menu#index'
+
+  get 'shopping_cart', to: 'orders#show', as: 'shopping_cart'
+  post 'add_to_shopping_cart', to: 'orders#add_to_cart', as: 'add_to_shopping_cart'
+  get 'edit_order', to: 'orders#edit', as: 'select_payment'
+  patch 'complete_order', to: 'orders#update', as: 'complete_order'
+  delete 'delete_product_from_order', to: 'orders#delete_product_from_order', as: 'delete_product_from_order'
 end
