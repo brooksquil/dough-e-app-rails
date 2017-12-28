@@ -30,9 +30,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
 
-                    <%= form_tag(products_path, :method => :get) do %>
+                    <%= form_tag(products_path product_types_path, :method => :get) do %>
                         <%= text_field_tag :term, nil, 
-                    {:placeholder => "Search Our Product Catalog"} %>
+                    {:placeholder => "Product Search"} %>
                             <% end %>
 
                                 <ul class="navbar-nav ml-auto">

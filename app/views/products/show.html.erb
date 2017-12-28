@@ -1,28 +1,23 @@
-<p id="notice">
-    <%= notice %>
-</p>
+<div class="card" style="width: 20rem;">
+    <div class="card-body">
+        <h4 class="card-title">
+            <%= @product.name %>
+        </h4>
+        <p class="card-text">
+            <%= @product.description %>
+        </p>
+        <p class="card-text">
+            <%= number_to_currency(@product.price) %>
+        </p>
 
-<p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-</p>
+    </div>
+    <div class="card" style="width: 20rem;">
+        <ul class="list-group list-group-flush">
+            <%= form_tag("/add_to_shopping_cart", method: "post") do  %>
+                <%= hidden_field_tag :product_id, @product.id %>
 
-<p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-</p>
-
-<p>
-    <strong>Price:</strong>
-    <%= @product.price %>
-</p>
-
-<p>
-    <strong>Available:</strong>
-    <%= @product.is_active %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-    <%= link_to 'Back', products_path %>
+                    <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+                        <% end %>
+        </ul>
+    </div>
+</div>

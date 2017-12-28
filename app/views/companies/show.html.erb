@@ -1,79 +1,80 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @company.company_name %>
+<p id="notice">
+    <%= notice %>
 </p>
 
 <p>
-  <strong>Shipping address:</strong>
-  <%= @company.shipping_address %>
+    <strong>Company name:</strong>
+    <%= @company.company_name %>
 </p>
 
 <p>
-  <strong>Shipping address 2:</strong>
-  <%= @company.shipping_address_2 %>
+    <strong>Shipping address:</strong>
+    <%= @company.shipping_address %>
 </p>
 
 <p>
-  <strong>Shipping city:</strong>
-  <%= @company.shipping_city %>
+    <strong>Shipping address 2:</strong>
+    <%= @company.shipping_address_2 %>
 </p>
 
 <p>
-  <strong>Shipping state:</strong>
-  <%= @company.shipping_state %>
+    <strong>Shipping city:</strong>
+    <%= @company.shipping_city %>
 </p>
 
 <p>
-  <strong>Shipping zipcode:</strong>
-  <%= @company.shipping_zipcode %>
+    <strong>Shipping state:</strong>
+    <%= @company.shipping_state %>
 </p>
 
 <p>
-  <strong>Shipping notes:</strong>
-  <%= @company.shipping_notes %>
+    <strong>Shipping zipcode:</strong>
+    <%= @company.shipping_zipcode %>
 </p>
 
 <p>
-  <strong>Billing street address:</strong>
-  <%= @company.billing_street_address %>
+    <strong>Shipping notes:</strong>
+    <%= @company.shipping_notes %>
 </p>
 
 <p>
-  <strong>Billing address 2:</strong>
-  <%= @company.billing_address_2 %>
+    <strong>Billing street address:</strong>
+    <%= @company.billing_street_address %>
 </p>
 
 <p>
-  <strong>Billing state:</strong>
-  <%= @company.billing_state %>
+    <strong>Billing address 2:</strong>
+    <%= @company.billing_address_2 %>
 </p>
 
 <p>
-  <strong>Billing zipcode:</strong>
-  <%= @company.billing_zipcode %>
+    <strong>Billing state:</strong>
+    <%= @company.billing_state %>
 </p>
 
 <p>
-  <strong>Company phone:</strong>
-  <%= @company.company_phone %>
+    <strong>Billing zipcode:</strong>
+    <%= @company.billing_zipcode %>
 </p>
 
 <p>
-  <strong>Company email:</strong>
-  <%= @company.company_email %>
+    <strong>Company phone:</strong>
+    <%= @company.company_phone %>
 </p>
 
 <p>
-  <strong>Payment terms:</strong>
-  <%= @company.payment_terms %>
+    <strong>Company email:</strong>
+    <%= @company.email %>
 </p>
 
 <p>
-  <strong>Is active:</strong>
-  <%= @company.is_active %>
+    <strong>Payment terms:</strong>
+    <%= @company.payment_terms %>
+</p>
+<p>
+    <strong>Customer is Active?</strong>
+    <%= @company.is_active %>
 </p>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+    <%= link_to 'Back', companies_path %>

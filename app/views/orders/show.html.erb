@@ -1,24 +1,49 @@
-<p id="notice"><%= notice %></p>
+<h1>Your Shopping Cart</h1>
 
-<p>
-  <strong>Delivery date:</strong>
-  <%= @order.delivery_date %>
-</p>
+<div class="row">
+    <% if @shopping_cart %>
 
-<p>
-  <strong>Company:</strong>
-  <%= @order.company %>
-</p>
+        <% @shopping_cart.products.each do |product| %>
+            <div class="card col-md-4">
+                <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= product.title %>
+                        </h4>
+                        <p class="card-text">
+                            <%= product.description %>
+                        </p>
+                        <p class="card-text">
+                            <%= number_to_currency(product.price) %>
+                        </p>
+                        <p class="card-text">Inventory:
+                            <%= product.quantity %>
+                        </p>
+                        <p class="card-text">Sold:
+                            <%= product.sold %>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <%= link_to 'Remove from Cart', delete_product_from_order_path(product),
+                        method: :delete,
+                        data: {confirm: 'Are you sure?'},
+                        class: "btn btn-warning" %>
+                    </div>
+            </div>
+            <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
+</div>
 
-<p>
-  <strong>Payment:</strong>
-  <%= @order.payment_id %>
-</p>
+<div class="center-total-and-complete-btn">
+    <p class="card-text">Order Total:
+        <%= number_to_currency(@shopping_cart.products.sum(:price))%>
+    </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+    <%= link_to 'Complete Your Order', select_payment_path, class: "btn btn-primary"  %>
+        <%= link_to 'Delete Your Order', @shopping_cart, method: :delete, class: "btn btn-danger" %>
+</div>
+
+
+<% else %>
+    <p>Add Products To Your Cart!</p>
+    <% end %>
