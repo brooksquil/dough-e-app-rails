@@ -21,6 +21,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def set_admin_role
+    @user = User.find(params[:id])
+    @user.add_role :admin
+    puts @user.has_role? :admin
+  end
+
+  def set_customer_role
+    @user = User.find(params[:id])
+    @user.add_role :customer
+    puts 
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
