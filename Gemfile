@@ -31,8 +31,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 #Use image upload
 gem "paperclip", "~> 5.0.0"
-
-
+#Use authorization based on admin
+gem "cancan"
 
 
 # Use Capistrano for deployment
