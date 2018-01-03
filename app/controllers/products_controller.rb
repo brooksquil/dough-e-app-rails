@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    
       @products = if params[:term]
       Product.where('name LIKE ?', "%#{params[:term]}%")
     else
@@ -14,15 +15,20 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+
   end
 
   # GET /products/new
   def new
+    authorize! :create, @product
+    
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
+    authorize! :update, @product
+    
   end
 
   # POST /products
@@ -58,6 +64,8 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    authorize! :destroy, @product
+    
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
@@ -73,6 +81,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :available, :product_type_id, :quantity_type_id, :company_id)
+      params.require(:product).permit(:name, :description, :price, :is_active, :product_type_id, :quantity_type_id, :company_id)
     end
 end

@@ -1,52 +1,55 @@
 <%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <% if product.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <ul>
+                <% product.errors.full_messages.each do |message| %>
+                    <li>
+                        <%= message %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name, id: :product_name %>
-  </div>
+            <div class="field">
+                <%= form.label :name %>
+                    <%= form.text_area :name, id: :product_name %>
+            </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description %>
-  </div>
+            <div class="field">
+                <%= form.label :description %>
+                    <%= form.text_area :description, id: :product_description %>
+            </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :product_price %>
-  </div>
+            <div class="field">
+                <%= form.label :price %>
+                    <%= form.text_field :price, id: :product_price %>
+            </div>
 
-  <div class="field">
-    <%= form.label :available %>
-    <%= form.check_box :available, id: :product_available %>
-  </div>
+            <div class="field">
+                <%= form.label :is_active %>
+                    <%= form.check_box :is_active, id: :product_is_active %>
+            </div>
 
-  <div class="field">
-    <%= form.label :product_type_id %>
-    <%= form.text_field :product_type_id, id: :product_product_type_id %>
-  </div>
+            <div class="field">
+                <%= form.label :product_type_id %>
+                    <%= form.text_field :product_type_id, id: :product_product_type_id %>
+            </div>
 
-  <div class="field">
-    <%= form.label :quantity_type_id %>
-    <%= form.text_field :quantity_type_id, id: :product_quantity_type_id %>
-  </div>
+            <div class="field">
+                <%= form.label :quantity_type_id %>
+                    <%= form.text_field :quantity_type_id, id: :product_quantity_type_id %>
+            </div>
 
-  <div class="field">
-    <%= form.label :company_id %>
-    <%= form.text_field :company_id, id: :product_company_id %>
-  </div>
+            <div class="field">
+                <%= form.label :company_id %>
+                    <%= form.text_field :company_id, id: :product_company_id %>
+            </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+            <div class="actions">
+                <%= form.submit %>
+            </div>
+            <% end %>
