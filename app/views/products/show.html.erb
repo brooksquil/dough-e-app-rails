@@ -15,9 +15,14 @@
         <ul class="list-group list-group-flush">
             <%= form_tag("/add_to_shopping_cart", method: "post") do  %>
                 <%= hidden_field_tag :product_id, @product.id %>
-
-                    <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
-                        <% end %>
+                    <% if can? :update, @product %>
+                        <%= link_to 'Edit', edit_product_path(@product) %>
+                            <% end %>
+                                <% if can? :destroy, @product %>
+                                    <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                        <% end %>
+                                            <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+                                                <% end %>
         </ul>
     </div>
 </div>

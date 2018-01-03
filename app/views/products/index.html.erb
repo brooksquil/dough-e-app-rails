@@ -1,29 +1,42 @@
-<h1>All Products</h1>
-
-<div class="row">
-
-    <% @products.each do |product| %>
-        <div class="card col-md-4">
-
-            <div class="card-body">
-                <h4 class="card-title">
-                    <%= product.name %>
-                </h4>
-                <p class="card-text">
-                    <%= product.description %>
-                </p>
-                <p class="card-text">
-                    <%= number_to_currency(product.price) %>
-                </p>
-
+<%= flash[:alert] %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1>Product Catalog</h1>
             </div>
-            <div class="card">
-                <ul class="list-group list-group-flush">
-
-                    <%= link_to "View Details", product_path(product), class: "list-group-item" %>
-                </ul>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <% if can? :create, @product %>
+                    <%= link_to 'New Product', new_product_path %>
+                        <% end %>
             </div>
         </div>
-        <% end %>
 
-</div>
+        <div class="row">
+
+            <% @products.each do |product| %>
+                <div class="card col-md-4">
+
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= product.name %>
+                        </h4>
+                        <p class="card-text">
+                            <%= product.description %>
+                        </p>
+                        <p class="card-text">
+                            <%= number_to_currency(product.price) %>
+                        </p>
+
+                    </div>
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+
+                            <%= link_to "View Details", product_path(product), class: "list-group-item" %>
+                        </ul>
+                    </div>
+                </div>
+                <% end %>
+
+        </div>
+    </div>

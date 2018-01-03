@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20171226203921) do
     t.text "work_phone"
     t.text "mobile_phone"
     t.boolean "is_active"
-    t.boolean "is_admin"
+    t.boolean "admin"
     t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -20,13 +20,13 @@ Company.create([{ company_name: 'Bar Mitzvah',  shipping_address: '123 8th Ave S
 #users Table
 ##############
 # 1
-User.create([{ first_name: 'Jill',  last_name: 'Jackson',  title: 'Wholesale Assistant', email: 'jill@provence.com', password_digest: '123456',  work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  is_admin: true,  company_id: '1'}])
+User.create([{ first_name: 'Jill',  last_name: 'Jackson',  title: 'Wholesale Assistant', email: 'jill@provence.com', password_digest: '123456',  work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  admin: true,  company_id: '1'}])
 
 #2
-User.create([{ first_name: 'Jamie',  last_name: 'Baker', title: 'Sous Chef',  email: 'Jamie@email.com', password_digest: '123456', work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  is_admin: true,  company_id: '2'}])
+User.create([{ first_name: 'Jamie',  last_name: 'Baker', title: 'Sous Chef',  email: 'Jamie@email.com', password_digest: '123456', work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  admin: false,  company_id: '2'}])
 
 #3
-User.create([{ first_name: 'Kelsey',  last_name: 'Lee', title: 'Chef', email: 'kelsey@oy.com', password_digest: '123456',  work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  is_admin: true,  company_id: '3'}])
+User.create([{ first_name: 'Kelsey',  last_name: 'Lee', title: 'Chef', email: 'kelsey@oy.com', password_digest: '123456',  work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  admin: false,  company_id: '3'}])
 
 #####################
 # payment_type Table
@@ -105,7 +105,7 @@ Product.create([{ name: 'Framboise Mousse 9-inch',  description: "Raspberry mous
 Product.create([{ name: 'Marble Rye, Pullman',  description: "Perfect for a deli style sandwich, this is a balanced rye and pumpernickel", price: 7.50,  is_active: true,  product_type_id: 1,  quantity_type_id: 1, company_id: 1}])
 
 #5
-Product.create([{ name: 'Macaron',  description: "Traditional french cookie made with merengue.", price: 1.90,  is_active: true,  product_type_id: 2,  quantity_type_id: 2, company_id: 1}])
+Product.create([{ name: 'French Macaron',  description: "Traditional french cookie made with merengue.", price: 1.90,  is_active: true,  product_type_id: 2,  quantity_type_id: 2, company_id: 1}])
 
 #6
 Product.create([{ name: 'Chocolate Torte',  description: "Flourless chocolate, gluten free.", price: 36.00,  is_active: true,  product_type_id: 3,  quantity_type_id: 1, company_id: 1}])

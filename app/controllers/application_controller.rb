@@ -11,5 +11,9 @@ class ApplicationController < ActionController::Base
     def authorize
       redirect_to '/login' unless current_user
     end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to products_url, :alert => exception.message
+  end
   
 end
