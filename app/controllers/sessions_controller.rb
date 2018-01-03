@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'Logged in!'
+      if user.admin?
+        redirect_to admin_menu_url, notice: 'Logged in!'
+      else
+      redirect_to customer_menu_url, notice: 'Logged in!' and return
+      end
     else
       flash.now.alert = 'Email or password is invalid'
       render :new
