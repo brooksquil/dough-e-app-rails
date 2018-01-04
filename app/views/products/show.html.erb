@@ -22,7 +22,10 @@
                                     <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
                                         <% end %>
                                             <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
-                                                <% end %>
+                                                <%= collection_select(@orderProduct, :quantity_type_id, QuantityType.all, :id, :name, include_blank: true) %>
+                                                    <%= text_field(@orderProduct, :quantity) %>
+                                                        <% end %>
+
         </ul>
     </div>
 </div>

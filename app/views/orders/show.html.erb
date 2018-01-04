@@ -8,7 +8,7 @@
                 <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <%= product.title %>
+                            <%= product.name %>
                         </h4>
                         <p class="card-text">
                             <%= product.description %>
@@ -16,12 +16,8 @@
                         <p class="card-text">
                             <%= number_to_currency(product.price) %>
                         </p>
-                        <p class="card-text">Inventory:
-                            <%= product.quantity %>
-                        </p>
-                        <p class="card-text">Sold:
-                            <%= product.sold %>
-                        </p>
+
+
                     </div>
                     <div class="card">
                         <%= link_to 'Remove from Cart', delete_product_from_order_path(product),
