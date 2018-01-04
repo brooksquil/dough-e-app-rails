@@ -14,57 +14,80 @@
         </div>
         <% end %>
 
-            <div class="field">
-                <%= form.label :first_name %>
-                    <%= form.text_area :first_name, id: :user_first_name %>
-            </div>
+            <div class="container-fluid form-control">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form role="form">
 
-            <div class="field">
-                <%= form.label :last_name %>
-                    <%= form.text_area :last_name, id: :user_last_name %>
-            </div>
+                        <div class="form-group">
+                            <label for="company_id">Company</label>
+                            <%= collection_select(@company, :company_id, Company.all, :id, :company_name, include_blank: true) %>
+                        </div>
 
-            <div class="field">
-                <%= form.label :title %>
-                    <%= form.text_area :title, id: :user_title %>
-            </div>
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" name="first_name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :email %>
-                    <%= form.text_area :email, id: :user_email %>
-            </div>
+                        <div class="form-group">
+                            <label for="title">Job Title</label>
+                            <input type="text" id="title" name="title" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :password %>
-                    <%= form.text_area :password, id: :user_password %>
-            </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :work_phone %>
-                    <%= form.text_area :work_phone, id: :user_work_phone %>
-            </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" name="password" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :mobile_phone %>
-                    <%= form.text_area :mobile_phone, id: :user_mobile_phone %>
-            </div>
+                        <div class="form-group">
+                            <label for="password_confirmation">Password</label>
+                            <input type="text" id="password_confirmation" name="password_confirmation" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :is_active %>
-                    <%= form.check_box :is_active, id: :user_is_active %>
-            </div>
+                        <div class="form-group">
+                            <label for="work_phone">Work Phone</label>
+                            <input type="text" id="work_phone" name="work_phone" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :admin %>
-                    <%= form.check_box :admin, id: :user_admin %>
-            </div>
+                        <div class="form-group">
+                            <label for="mobile_phone">Mobile Phone</label>
+                            <input type="text" id="mobile_phone" name="mobile_phone" class="form-control" />
+                        </div>
 
-            <div class="field">
-                <%= form.label :company_id %>
-                    <%= form.text_field :company_id, id: :user_company_id %>
-            </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="admin">
+                                        Check Box For Admin User
+                                      <input type="checkbox" value="1" id="admin" name="admin" class="form-control-inline">
+                                    </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="is_active">
+                                            Check Box For Active User
+                                          <input type="checkbox" value="1" id="is_active" name="is_active" class="form-control-inline">
+                                        </label>
+                            </div>
+                        </div>
 
-            <div class="actions">
-                <%= form.submit %>
+
+
+                        <div class="actions">
+                            <%= form.submit class: "btn-success" %>
+                        </div>
+                        <% end %>
+
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
             </div>
-            <% end %>

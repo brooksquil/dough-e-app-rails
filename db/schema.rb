@@ -37,15 +37,18 @@ ActiveRecord::Schema.define(version: 20171226203921) do
     t.integer "order_id"
     t.integer "product_id"
     t.integer "standing_order_id"
+    t.integer "quantity_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_products_on_order_id"
     t.index ["product_id"], name: "index_order_products_on_product_id"
+    t.index ["quantity_type_id"], name: "index_order_products_on_quantity_type_id"
     t.index ["standing_order_id"], name: "index_order_products_on_standing_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.date "delivery_date"
+    t.boolean "open"
     t.integer "company_id"
     t.integer "user_id"
     t.integer "payment_type_id"

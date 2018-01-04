@@ -16,18 +16,6 @@ Company.create([{ company_name: 'Squealing Pig', shipping_address: '123 Gallatin
 Company.create([{ company_name: 'Bar Mitzvah',  shipping_address: '123 8th Ave South',  shipping_address_2: '2A',  shipping_city: 'Nashville',  shipping_state: 'TN',  shipping_zipcode: '37216',  shipping_notes: '',  billing_street_address: '123 8th Ave South',  billing_address_2: '2A',  billing_state: 'TN',  billing_zipcode: '37217',  company_phone: '615-555-5555', email: 'shalom@mitzvah.com',  payment_terms: 'COD', is_active: true}])
 
 
-##############
-#users Table
-##############
-# 1
-User.create([{ first_name: 'Jill',  last_name: 'Jackson',  title: 'Wholesale Assistant', email: 'jill@provence.com', password_digest: '123456',  work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  admin: true,  company_id: '1'}])
-
-#2
-User.create([{ first_name: 'Jamie',  last_name: 'Baker', title: 'Sous Chef',  email: 'Jamie@email.com', password_digest: '123456', work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  admin: false,  company_id: '2'}])
-
-#3
-User.create([{ first_name: 'Kelsey',  last_name: 'Lee', title: 'Chef', email: 'kelsey@oy.com', password_digest: '123456',  work_phone: '615-555-5555',  mobile_phone: '615-555-5555',  is_active: true,  admin: false,  company_id: '3'}])
-
 #####################
 # payment_type Table
 #####################
@@ -67,27 +55,6 @@ QuantityType.create([{ name: 'dozen',  quantity: 5}])
 QuantityType.create([{ name: '8-Pack',  quantity: 12}])
 
 
-#####################
-# standing_order Table
-#####################
-# 1
-StandingOrder.create([{ week_day: 'Monday',  quantity: 12,  is_active: true}])
-
-#2
-StandingOrder.create([{ week_day: 'Wednesday',  quantity: 5,  is_active: true}])
-
-#3
-StandingOrder.create([{ week_day: 'Friday',  quantity: 25,  is_active: true}])
-
-#4
-StandingOrder.create([{ week_day: 'Monday',  quantity: 2,  is_active: false}])
-
-#5
-StandingOrder.create([{ week_day: 'Wednesday',  quantity: 4,  is_active: true}])
-
-#6
-StandingOrder.create([{ week_day: 'Friday',  quantity: 12,  is_active: true}])
-
 
 #####################
 # product Table
@@ -111,28 +78,7 @@ Product.create([{ name: 'French Macaron',  description: "Traditional french cook
 Product.create([{ name: 'Chocolate Torte',  description: "Flourless chocolate, gluten free.", price: 36.00,  is_active: true,  product_type_id: 3,  quantity_type_id: 1, company_id: 1}])
 
 
-#####################
-# order Table
-#####################
-# 1
-Order.create([{ delivery_date: '2017-12-15', company_id:2,  user_id: 2,  payment_type_id: nil}])
-
-#2
-Order.create([{ delivery_date: '2017-12-16',  company_id:2,  user_id: 2,  payment_type_id: nil}])
-
-#3
-Order.create([{ delivery_date: '2017-12-15',  company_id:3,  user_id: 3,  payment_type_id: 3}])
 
 
-#####################
-# order_product Table
-#####################
-# 1
-OrderProduct.create([{ quantity: 1,  order_id: 1,  product_id: 1,  standing_order_id: 1}])
 
-#2
-OrderProduct.create([{ quantity: 2,  order_id: 1,  product_id: 2,  standing_order_id: 2}])
-
-#3
-OrderProduct.create([{ quantity: 12,  order_id: 2,  product_id: 3,  standing_order_id: nil}])
 
