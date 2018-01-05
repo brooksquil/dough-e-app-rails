@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    
       @products = if params[:term]
       Product.where('name LIKE ?', "%#{params[:term]}%")
     else
@@ -13,7 +12,6 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1
-  # GET /products/1.json
   def show
 
   end
@@ -39,10 +37,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,10 +49,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,7 +63,6 @@ class ProductsController < ApplicationController
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -81,7 +74,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :is_active, :product_type_id, :quantity_type_id, :company_id)
+      params.require(:product).permit(:name, :description, :price, :is_active, :product_type_id, :quantity_type_id, :company_id, :image, :term)
     end
     
 end

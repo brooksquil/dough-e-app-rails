@@ -3,6 +3,9 @@
         <h4 class="card-title">
             <%= @product.name %>
         </h4>
+        <div>
+            <%= image_tag @product.image.url(:medium) %>
+        </div>
         <p class="card-text">
             <%= @product.description %>
         </p>

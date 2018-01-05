@@ -21,9 +21,9 @@
                         <h4 class="card-title">
                             <%= product.name %>
                         </h4>
-                        <p class="card-text">
-                            <%= product.description %>
-                        </p>
+                        <div>
+                            <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
+                        </div>
                         <p class="card-text">
                             <%= number_to_currency(product.price) %>
                         </p>
