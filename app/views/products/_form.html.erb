@@ -49,10 +49,11 @@
                     <%= form.text_field :company_id, id: :product_company_id %>
             </div>
 
-            <p>
+            <div class="field">
                 <%= form.label :image %>
+
                     <%= form.file_field(:image, {:class => 'form-control'}) %>
-            </p>
+            </div>
 
             <div class="actions">
                 <%= form.submit %>
