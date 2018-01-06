@@ -15,12 +15,16 @@ class OrdersController < ApplicationController
       end
       
       #########################
-      #displays order confirmation 
+      #all open orders 
       #index.html.erb
       def index
-  
+        @orders = Order.where("DATE(delivery_date) = ?", Date.today + 1.day)
       end
   
+        #orders for delivery tomorrow/ production today
+      #index.html.erb
+
+
       #show shopping cart with products by user id
       #show.html.erb
       def show
