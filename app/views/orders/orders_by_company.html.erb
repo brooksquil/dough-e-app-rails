@@ -2,10 +2,11 @@
     <%= notice %>
 </p>
 
-<h1>Orders</h1>
-
-
-
+<h1>All Orders By Company</h1>
+<div class="form-group">
+    <label for="company_id">Company</label>
+    <%= collection_select(@company, :company_id, Company.all, :id, :company_name, include_blank: true) %>
+</div>
 <table>
     <thead>
         <tr>
@@ -34,7 +35,7 @@
                     <%= link_to 'Edit', edit_order_path(order) %>
                 </td>
                 <td>
-                    <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
             </tr>
             <% end %>
@@ -43,5 +44,4 @@
 
 <br>
 
-<%= link_to 'Shop', products_path, class: 'btn-success' %>
-    <%= link_to 'Back', orders_path, class: 'btn-danger' %>
+<%= link_to 'Back', orders_path, class: 'btn-danger' %>
