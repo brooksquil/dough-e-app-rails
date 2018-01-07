@@ -15,19 +15,61 @@ class OrdersController < ApplicationController
       end
       
       #########################
-      #displays order confirmation 
+
+      #all orders
       #index.html.erb
       def index
-  
+        
+            @orders = Order.all
+    
       end
+
+      #all open orders 
+      #open.html.erb
+      def open_orders
+        @orders = Order.where(:open => true)
+      end
+
+      #all closed orders 
+      #closed.html.erb
+      def closed_orders
+        @orders = Order.where(:open => false)
+      end
+
+      #open orders by company_id
+      #company_open_orders.html.erb
+      def company_open_orders
+        @user = User.find(session[:user_id])     
+        @orders = Order.where(user_id: @user.id, company_id: @user.company_id, :open => true)
+      end
+
+    #   All orders by user's company_id
+    #   company_all_orders_by_users_company.html.erb
+      def company_all_orders_by_users_company
+        @user = User.find(session[:user_id])     
+        @orders = Order.where(user_id: @user.id, company_id: @user.company_id)
+      end
+
+    #   All orders by company
+    #   company_all_orders_by_users_company.html.erb
+    def orders_by_company
+        @orders = Order.where(params[:company_id])
+    end
   
+        #orders for delivery tomorrow/ production today
+      #index.html.erb
+      def todays_production
+        @orders = Order.where("DATE(delivery_date) = ?", Date.today + 1.day)
+      end
+
+
       #show shopping cart with products by user id
       #show.html.erb
       def show
       @shopping_cart = Order.where(:user_id => session[:user_id]).last
       end
   
-      #This finds the order and updates based on order params, redirecting to add the payment type to the order, thus completing the order
+      #This finds the order and updates based on order params, redirecting to add the true to order complet, thus completing the order
       def update
           @order = Order.where(:user_id => session[:user_id]).last
           @order.update(order_params)
@@ -70,6 +112,11 @@ class OrdersController < ApplicationController
     def product_params
       params.require(:product).permit(:id)
     end
+
+    def company_params
+      params.require(:company).permit(:id, :company_name)
+    end
+
 
   
 end

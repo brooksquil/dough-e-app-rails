@@ -28,4 +28,11 @@ Rails.application.routes.draw do
   get 'edit_order', to: 'orders#edit', as: 'select_payment'
   patch 'complete_order', to: 'orders#update', as: 'complete_order'
   delete 'delete_product_from_order', to: 'orders#delete_product_from_order', as: 'delete_product_from_order'
+
+  get 'open_orders', to: 'orders#open_orders', as: 'open_orders'
+  get 'closed_orders', to: 'orders#closed_orders', as: 'closed_orders'
+  get 'company_open_orders', to: 'orders#company_open_orders', as: 'company_open_orders'
+  get 'company_all_orders_by_users_company', to: 'orders#company_all_orders_by_users_company', as: 'company_all_orders_by_users_company'
+  get 'orders_by_company', to: 'orders#orders_by_company', as: 'orders_by_company'
+  get 'todays_production', to: 'orders#todays_production', as:'todays_production'
 end

@@ -2,9 +2,10 @@
     <%= notice %>
 </p>
 
-<h1>Orders</h1>
-
-
+<h1>Orders For Production on
+    <%= Date.today %> & Delivery on
+        <%= Date.today + 1.day %>
+</h1>
 
 <table>
     <thead>
@@ -43,5 +44,4 @@
 
 <br>
 
-<%= link_to 'Shop', products_path, class: 'btn-success' %>
-    <%= link_to 'Back', orders_path, class: 'btn-danger' %>
+<%= link_to 'Back', orders_path, class: 'btn-danger' %>

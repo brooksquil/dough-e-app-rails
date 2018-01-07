@@ -71,4 +71,12 @@ class OrderProductsController < ApplicationController
     def order_product_params
       params.require(:order_product).permit(:quantity, :order_id, :product_id, :standing_order_id)
     end
+
+    def order_params
+      params.require(:order).permit(:delivery_date, :company_id, :user_id, :payment_id)
+    end
+
+    def product_params
+      params.require(:product).permit(:id)
+    end
 end
