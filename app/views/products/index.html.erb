@@ -1,42 +1,45 @@
 <%= flash[:alert] %>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <h1>Product Catalog</h1>
-            </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <% if can? :create, @product %>
-                    <%= link_to 'New Product', new_product_path %>
-                        <% end %>
-            </div>
-        </div>
 
-        <div class="row">
 
-            <% @products.each do |product| %>
-                <div class="card col-md-4">
 
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <%= product.name %>
-                        </h4>
-                        <div>
-                            <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
-                        </div>
-                        <p class="card-text">
-                            <%= number_to_currency(product.price) %>
-                        </p>
 
-                    </div>
-                    <div class="card">
-                        <ul class="list-group list-group-flush">
 
-                            <%= link_to "View Details", product_path(product), class: "list-group-item" %>
-                        </ul>
-                    </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h1 class="brown">Product Catalog</h1>
                 </div>
-                <% end %>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <% if can? :create, @product %>
+                        <%= link_to 'New Product', new_product_path, class: "btn" %>
+                            <% end %>
+                </div>
+            </div>
+            <div class="row">
+                <% @products.each do |product| %>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 20rem;">
+                            <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= product.name %>
+                                    </h5>
+                                    <p>
+                                        <%= product.description %>
+                                    </p>
+                                    <p class="card-text">
+                                        <%= number_to_currency(product.price) %>
+                                    </p>
+                                    <ul class="list-group list-group-flush">
 
+                                        <%= link_to "View Details", product_path(product), class: "btn" %>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+                    <% end %>
+            </div>
         </div>
-    </div>
+    </section>
