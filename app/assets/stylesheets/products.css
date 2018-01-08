@@ -27,13 +27,17 @@ h3 {
 }
 
 .btn {
-  background-color: palegreen;
-  position: absolute;
-  bottom: 10px;
-  width: 75%;
+  background-color: #72e072;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
   box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  margin: 5px;
+  text-align: center;
 }
 
-.brown {
-  color: brown;
+#total {
+  background-color: white;
+  color: red;
 }
