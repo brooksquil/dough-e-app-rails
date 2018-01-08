@@ -23,14 +23,6 @@
                             <li class="nav-item">
                                 <%= link_to "Product Catalog", products_path, class: "nav-link" %>
                             </li>
-                            <li class="nav-item">
-                                <% if @user == :admin? %>
-                                    <% link_to "Admin Dashboard", admin_menu_path, class: "nav-link" %>
-                                        <% else %>
-                                            <% link_to "Dashboard", customer_menu_path, class: "nav-link" %>
-                                                <% end %>
-                            </li>
-
                         </ul>
 
                     </div>
@@ -40,10 +32,8 @@
                             <%= text_field_tag :term, nil, 
                     {:placeholder => "Product Search"} %>
                                 <% end %>
-
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item align-self-end">
-
                                         </li>
                                         <li class="nav-item align-self-end">
                                             <%= link_to "Log Out", logout_path, class: "nav-link" %>
@@ -52,16 +42,61 @@
                     </div>
             </nav>
             <% else %>
-                <%= link_to 'Login', login_path, class: "" %>
-                    <%= link_to 'Sign Up', signup_path %>
+                <nav class="navbar navbar-expand-lg">
+                    <%= link_to "Mac Factory", root_path, class: "navbar-brand" %>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item align-self-end">
+                                </li>
+                                <li class="nav-item align-self-end">
+                                    <%= link_to 'Login', login_path, class: "" %>
 
-                        <% end %>
+                                </li>
+                            </ul>
 
-                            <div class="container">
+                        </div>
+                </nav>
+                <%= link_to 'Sign Up', signup_path %>
 
-                                <%= yield %>
+                    <% end %>
+                        <div class="dash">
+                            <% if logged_in? %>
+                                <% if @user == :admin? %>
+                                    <div id="mySidenav" class="sidenav">
+                                        <a href="#/orders">Today's Production</a>
+                                        <hr>
+                                        <a href="#">Services</a>
+                                        <hr class="line">
+                                        <a href="#">Clients</a>
+                                        <hr>
+                                        <a href="#">Contact</a>
+                                        <hr>
+                                    </div>
+                                    <% else %>
+                                        <div id="mySidenav" class="sidenav">
+                                            <%= link_to 'Current Order', shopping_cart_path %>
+                                                <hr>
+                                                <a href="#">Services</a>
+                                                <hr class="line">
+                                                <a href="#">Clients</a>
+                                                <hr>
+                                                <a href="#">Contact</a>
+                                                <hr>
+                                        </div>
+                                        <% end %>
+                                            <% end %>
+                        </div>
 
-                            </div>
+
+
+                        <div class="container">
+
+                            <%= yield %>
+
+                        </div>
     </div>
 
 

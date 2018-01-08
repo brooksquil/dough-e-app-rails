@@ -15,5 +15,65 @@
  */
 
 .navbar {
-    background-color: #A0C36F;
+    background-color: rgb(73, 19, 19);
+}
+
+.navbar a {
+    color: lightgoldenrodyellow;
+}
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 250px;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 50px;
+    /* Stay at the top */
+    left: 0;
+    background-color: rgb(73, 19, 19);
+    padding: 10px;
+    overflow-x: hidden;
+    padding-top: 75px;
+    transition: 0.5s;
+}
+
+
+/* The navigation menu links */
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: lightgoldenrodyellow;
+    display: block;
+    transition: 0.3s;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+    color: rgb(114, 224, 114);
+}
+
+
+/* Position and style the close button (top right corner) */
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
