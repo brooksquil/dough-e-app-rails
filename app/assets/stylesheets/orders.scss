@@ -1,3 +1,18 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.row-padding {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#table {
+    background-color: lightgoldenrodyellow;
+    box-shadow: 2px 3px 3px black;
+    border-radius: 10px;
+}
+
+.btn {
+    color: white;
+    text-decoration: none;
+}
