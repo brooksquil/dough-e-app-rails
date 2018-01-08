@@ -1,41 +1,45 @@
 <%= flash[:alert] %>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h1 class="brown">Product Catalog</h1>
-                </div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <% if can? :create, @product %>
-                        <%= link_to 'New Product', new_product_path, class: "btn" %>
-                            <% end %>
-                </div>
-            </div>
-            <div class="row">
-                <% @products.each do |product| %>
-                    <div class="col-md-4">
-                        <div class="card" style="width: 20rem;">
-                            <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <%= product.name %>
-                                    </h5>
-                                    <p>
-                                        <%= product.description %>
-                                    </p>
-                                    <p class="card-text">
-                                        <%= number_to_currency(product.price) %>
-                                    </p>
-                                    <ul class="list-group list-group-flush">
-
-                                        <%= link_to "View Details", product_path(product), class: "btn" %>
-                                    </ul>
-                                </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1 class="brown">Product Catalog</h1>
+                        </div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <% if can? :create, @product %>
+                                <%= link_to 'New Product', new_product_path, class: "btn" %>
+                                    <% end %>
                         </div>
                     </div>
-                    <% end %>
-            </div>
+                    <div class="row">
+                        <% @products.each do |product| %>
+                            <div class="col-md-4">
+                                <div class="card" style="width: 20rem;">
+                                    <%= image_tag product.image.url(:medium, {:class => 'product_image_smaller' }) %>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <%= product.name %>
+                                            </h5>
+                                            <p>
+                                                <%= product.description %>
+                                            </p>
+                                            <p class="card-text">
+                                                <%= number_to_currency(product.price) %>
+                                            </p>
+                                            <ul class="list-group list-group-flush">
+
+                                                <%= link_to "View Details", product_path(product), class: "btn" %>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                            <% end %>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+    </div>

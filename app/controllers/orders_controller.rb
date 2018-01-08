@@ -19,20 +19,20 @@ class OrdersController < ApplicationController
       #all orders
       #index.html.erb
       def index
-        
             @orders = Order.all
-    
       end
 
       #all open orders 
       #open.html.erb
-      def open_orders
+      def open_orders 
+        authorize! :read, @orders
         @orders = Order.where(:open => true)
       end
 
       #all closed orders 
       #closed.html.erb
       def closed_orders
+        authorize! :read, @orders        
         @orders = Order.where(:open => false)
       end
 
@@ -52,13 +52,15 @@ class OrdersController < ApplicationController
 
     #   All orders by company
     #   company_all_orders_by_users_company.html.erb
-    def orders_by_company
+      def orders_by_company
+        authorize! :read, @orders
         @orders = Order.where(params[:company_id])
-    end
+      end
   
         #orders for delivery tomorrow/ production today
       #index.html.erb
       def todays_production
+        authorize! :read, @orders        
         @orders = Order.where("DATE(delivery_date) = ?", Date.today + 1.day)
       end
 

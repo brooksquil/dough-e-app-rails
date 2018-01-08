@@ -64,30 +64,20 @@
                     <% end %>
                         <div class="dash">
                             <% if logged_in? %>
-                                <% if @user == :admin? %>
-                                    <div id="mySidenav" class="sidenav">
+                                <div id="mySidenav" class="sidenav">
+                                    <% if can? :update, @orders %>
                                         <a href="#/orders">Today's Production</a>
-                                        <hr>
-                                        <a href="#">Services</a>
-                                        <hr class="line">
-                                        <a href="#">Clients</a>
-                                        <hr>
-                                        <a href="#">Contact</a>
-                                        <hr>
-                                    </div>
-                                    <% else %>
-                                        <div id="mySidenav" class="sidenav">
-                                            <%= link_to 'Current Order', shopping_cart_path %>
-                                                <hr>
-                                                <a href="#">Services</a>
-                                                <hr class="line">
-                                                <a href="#">Clients</a>
-                                                <hr>
-                                                <a href="#">Contact</a>
-                                                <hr>
-                                        </div>
                                         <% end %>
-                                            <% end %>
+                                            <hr>
+                                            <a href="#">Services</a>
+                                            <hr class="line">
+                                            <a href="#">Clients</a>
+                                            <hr>
+                                            <a href="#">Contact</a>
+                                            <hr>
+                                </div>
+
+                                <% end %>
                         </div>
 
 

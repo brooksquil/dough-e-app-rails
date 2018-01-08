@@ -22,6 +22,12 @@
     color: lightgoldenrodyellow;
 }
 
+.navbar a:hover {
+    color: rgb(73, 19, 19);
+    text-decoration: none;
+    background-color: rgb(114, 224, 114);
+}
+
 .sidenav {
     height: 100%;
     /* 100% Full-height */
@@ -57,7 +63,9 @@
 /* When you mouse over the navigation links, change their color */
 
 .sidenav a:hover {
-    color: rgb(114, 224, 114);
+    color: rgb(73, 19, 19);
+    text-decoration: none;
+    background-color: rgb(114, 224, 114);
 }
 
 

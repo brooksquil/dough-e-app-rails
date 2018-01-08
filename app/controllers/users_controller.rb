@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
   
   def create
+    authorize! :create, @users    
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
