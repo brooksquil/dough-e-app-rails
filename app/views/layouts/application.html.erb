@@ -62,22 +62,51 @@
                 <%= link_to 'Sign Up', signup_path %>
 
                     <% end %>
-                        <div class="dash">
-                            <% if logged_in? %>
-                                <div id="mySidenav" class="sidenav">
-                                    <% if can? :update, @orders %>
-                                        <a href="#/orders">Today's Production</a>
-                                        <% end %>
-                                            <hr>
-                                            <a href="#">Services</a>
-                                            <hr class="line">
-                                            <a href="#">Clients</a>
-                                            <hr>
-                                            <a href="#">Contact</a>
-                                            <hr>
-                                </div>
 
-                                <% end %>
+                        <div class="container">
+                            <div class="col-md-2">
+                                <div class="dash">
+                                    <% if logged_in? %>
+                                        <% if @current_user.admin? %>
+
+                                            <div id="mySidenav" class="sidenav">
+                                                <div>
+                                                    <%= link_to "Today's Production", todays_production_path %>
+
+                                                </div>
+                                                <div>
+                                                    <%= link_to "Current Order", shopping_cart_path %>
+                                                </div>
+                                                <div>
+                                                    <%= link_to "Past Orders", company_all_orders_by_users_company_path %>
+                                                </div>
+                                                <div>
+                                                    <%= link_to "Open Orders", company_open_orders_path %>
+                                                </div>
+                                                <div>
+                                                    <%= link_to "Browse Products", products_path %>
+                                                </div>
+                                            </div>
+                                            <% else %>
+                                                <div id="mySidenav" class="sidenav">
+
+                                                    <div>
+                                                        <%= link_to "Current Order", shopping_cart_path %>
+                                                    </div>
+                                                    <div>
+                                                        <%= link_to "Past Orders", company_all_orders_by_users_company_path %>
+                                                    </div>
+                                                    <div>
+                                                        <%= link_to "Open Orders", company_open_orders_path %>
+                                                    </div>
+                                                    <div>
+                                                        <%= link_to "Browse Products", products_path %>
+                                                    </div>
+                                                </div>
+                                                <% end %>
+                                                    <% end %>
+                                </div>
+                            </div>
                         </div>
 
 
