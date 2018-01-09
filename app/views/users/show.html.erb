@@ -2,50 +2,55 @@
     <%= notice %>
 </p>
 
-<p>
-    <strong>First name:</strong>
-    <%= @user.first_name %>
-</p>
 
-<p>
-    <strong>Last name:</strong>
-    <%= @user.last_name %>
-</p>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <section>
+            <div class="container" style="width: 450px;">
+                <div class="card">
 
-<p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-</p>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= @user.first_name %>
+                        </h4>
+                        <p>
+                            <strong>Email:</strong>
+                            <%= @user.email %>
+                        </p>
 
-<p>
-    <strong>Password digest:</strong>
-    <%= @user.password_digest %>
-</p>
 
-<p>
-    <strong>Work phone:</strong>
-    <%= @user.work_phone %>
-</p>
 
-<p>
-    <strong>Mobile phone:</strong>
-    <%= @user.mobile_phone %>
-</p>
+                        <p>
+                            <strong>Work phone:</strong>
+                            <%= @user.work_phone %>
+                        </p>
 
-<p>
-    <strong>Is active:</strong>
-    <%= @user.is_active %>
-</p>
+                        <p>
+                            <strong>Mobile phone:</strong>
+                            <%= @user.mobile_phone %>
+                        </p>
 
-<p>
-    <strong>Is admin:</strong>
-    <%= @user.is_admin %>
-</p>
+                        <p>
+                            <strong>Is active:</strong>
+                            <%= @user.is_active %>
+                        </p>
 
-<p>
-    <strong>Company:</strong>
-    <%= @user.company %>
-</p>
+                        <p>
+                            <strong>Admin:</strong>
+                            <%= @user.admin %>
+                        </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to 'Back', users_path %>
+                        <p>
+                            <strong>Company:</strong>
+                            <%= @user.company %>
+                        </p>
+
+
+                    </div>
+                    <%= link_to 'Edit', edit_user_path(@user), class: 'btn' %>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

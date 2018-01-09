@@ -12,7 +12,7 @@
                         <h1>Users</h1>
                     </div>
                     <div class="col-md-4" style="margin-left: 50px; ">
-                        <%= link_to 'Add User', signup_path, class: 'btn-warning' %>
+                        <%= link_to 'Add User', signup_path, class: 'btn' %>
                     </div>
                 </div>
 
@@ -48,12 +48,8 @@
                                         <td>
                                             <%= link_to 'Show', user, class: 'btn' %>
                                         </td>
-                                        <td>
-                                            <%= link_to 'Edit', edit_user_path(user), class: 'btn' %>
-                                        </td>
-                                        <td>
-                                            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
-                                        </td>
+
+
 
                                     </tr>
                                     <% end %>
@@ -66,4 +62,4 @@
             </div>
         </section>
     </div>
-</div>
+</div>R

@@ -1,67 +1,58 @@
-<p id="notice">
-    <%= notice %>
-</p>
+<%= flash[:alert] %>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1 class="brown">Customers</h1>
+                        </div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <% if can? :create, @product %>
+                                <%= link_to 'Add Company', new_company_path, class: "btn" %>
+                                    <% end %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <% @companies.each do |company| %>
+                            <div class="col-md-4">
+                                <div class="card" style="width: 20rem;">
 
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= company.company_name %>
+                                        </h5>
+                                        <p>
+                                            <%= company.shipping_address %>
+                                        </p>
+                                        <p class="card-text">
+                                            <%= company.shipping_address_2 %>
 
-<div class="row">
-    <div class="container col-md-4">
-        <h1>Companies</h1>
-    </div>
-    <div class="container col-md-4">
+                                        </p>
+                                        <p class="card-text">
+                                            <%= company.shipping_city %>
 
-    </div>
-    <div class="container col-md-4">
-        <span class="float-right"><%= link_to 'Add Company', new_company_path, class: "btn btn-success" %></span>
-    </div>
-</div>
-<div class="row">
+                                        </p>
+                                        <p class="card-text">
+                                            <%= company.shipping_zipcode %>
 
-    <% @companies.each do |company| %>
-        <div class="card col-md-4">
+                                        </p>
+                                        <p class="card-text">
+                                            <%= company.email %>
 
-            <div class="card-body">
-                <h4 class="card-title">
-                    <%= company.company_name %>
-                </h4>
-                <p class="card-text">
-                    <%= company.shipping_address %>
-                </p>
-                <p class="card-text">
-                    <%= company.shipping_address_2 %>
-                </p>
-                <p class="card-text">
-                    <%= company.shipping_city %>
-                </p>
-                <p class="card-text">
-                    <%= company.shipping_zipcode %>
-                </p>
-                <p class="card-text">
-                    <%= company.company_phone %>
-                </p>
-                <p class="card-text">
-                    <%= company.email %>
-                </p>
-                <p class="card-text">
-                    <%= company.shipping_zipcode %>
-                </p>
-                <div class="row">
-                    <p class="card-text">
-                        <p>Active Customer?: </p>
+                                        </p>
+                                        <ul class="list-group list-group-flush">
 
-                        <p>
-                            <%= company.is_active %>
-                        </p>
-                    </p>
-
+                                            <%= link_to "View Details", company_path(company), class: "btn" %>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <% end %>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <ul class="list-group list-group-flush">
-
-                    <%= link_to "View Details", company_path(company), class: "list-group-item" %>
-                </ul>
-            </div>
+            </section>
         </div>
-        <% end %>
-
-</div>
+    </div>

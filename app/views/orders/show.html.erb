@@ -22,12 +22,13 @@
                                                     <%= number_to_currency(product.price) %>
                                                 </p>
 
+
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <%= link_to 'Remove from Cart', delete_product_from_order_path(product),
                                             method: :delete,
                                             data: {confirm: 'Are you sure?'},
-                                            class: "btn btn-warning" %>
+                                            class: "btn" %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -42,17 +43,15 @@
                         <% end %>
 
                             <div class="row">
-                                <div class="col-md-10">
-                                    <%= link_to 'Complete Your Order', select_payment_path, class: "btn btn-primary" %>
-                                </div>
-                                <div class="col-md-2" id="total">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3" id="total">
                                     <label for="proce">Total Order:</label>
 
                                     <%= number_to_currency(@shopping_cart.products.sum(:price))%>
 
                                 </div>
-                                <div class="col-md-12">
-                                    <%= link_to 'Cancel Order', @shopping_cart, method: :delete, class: "btn btn-danger" %>
+                                <div class="col-md-3">
+                                    <%= link_to 'Cancel Order', @shopping_cart, method: :delete, class: "btn" %>
 
                                 </div>
                             </div>

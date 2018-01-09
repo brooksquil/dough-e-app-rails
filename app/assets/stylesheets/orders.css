@@ -32,7 +32,7 @@ h3 {
   border: none;
   position: relative;
   padding: 15px;
-  height: 455px;
+  height: 510px;
   overflow: hidden;
   width: auto !important;
   margin-top: 20px;
@@ -44,6 +44,7 @@ h3 {
   top: 2px;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 10px;
   box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.3);
   color: #552626;
 }
