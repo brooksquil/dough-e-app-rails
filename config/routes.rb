@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :companies
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  # un auth product catalog
+  get '/product_catalog', to: 'homepage#unauth_product_catalog', as: 'product_catalog'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
