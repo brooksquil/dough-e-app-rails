@@ -14,80 +14,87 @@
         </div>
         <% end %>
 
-            <div class="container-fluid form-control">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <form role="form">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <section>
+                        <div class="container-fluid form-control">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6">
+                                <form role="form">
 
-                        <div class="form-group">
-                            <label for="company_id">Company</label>
-                            <%= collection_select(@company, :company_id, Company.all, :id, :company_name, include_blank: true) %>
-                        </div>
+                                    <div class="form-group">
+                                        <label for="company_id">Company</label>
+                                        <%= collection_select(@company, :company_id, Company.all, :id, :company_name, include_blank: true) %>
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="first_name">First Name</label>
-                            <input type="text" id="first_name" name="first_name" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="last_name">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" id="first_name" name="first_name" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" id="last_name" name="last_name" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="title">Job Title</label>
-                            <input type="text" id="title" name="title" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="title">Job Title</label>
+                                        <input type="text" id="title" name="title" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" id="email" name="email" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" id="email" name="email" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="text" id="password" name="password" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="text" id="password" name="password" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="password_confirmation">Password</label>
-                            <input type="text" id="password_confirmation" name="password_confirmation" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="password_confirmation">Password</label>
+                                        <input type="text" id="password_confirmation" name="password_confirmation" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="work_phone">Work Phone</label>
-                            <input type="text" id="work_phone" name="work_phone" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="work_phone">Work Phone</label>
+                                        <input type="text" id="work_phone" name="work_phone" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <label for="mobile_phone">Mobile Phone</label>
-                            <input type="text" id="mobile_phone" name="mobile_phone" class="form-control" />
-                        </div>
+                                    <div class="form-group">
+                                        <label for="mobile_phone">Mobile Phone</label>
+                                        <input type="text" id="mobile_phone" name="mobile_phone" class="form-control" />
+                                    </div>
 
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label for="admin">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label for="admin">
                                         Check Box For Admin User
                                       <input type="checkbox" value="1" id="admin" name="admin" class="form-control-inline">
                                     </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label for="is_active">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label for="is_active">
                                             Check Box For Active User
                                           <input type="checkbox" value="1" id="is_active" name="is_active" class="form-control-inline">
                                         </label>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="actions">
+                                        <%= form.submit class: "btn-success" %>
+                                    </div>
+                                    <% end %>
+
+                                </form>
                             </div>
+                            <div class="col-sm-3"></div>
                         </div>
-
-
-
-                        <div class="actions">
-                            <%= form.submit class: "btn-success" %>
-                        </div>
-                        <% end %>
-
-                    </form>
+                    </section>
                 </div>
-                <div class="col-sm-3"></div>
             </div>

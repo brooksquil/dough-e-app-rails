@@ -1,0 +1,15 @@
+.btn a:hover {
+  background-color: #552626;
+}
+
+.btn-warning {
+  padding: 10px;
+  position: sticky;
+  top: 8px;
+  border-radius: 6px;
+  color: #552626;
+}
+
+h1 {
+  margin-left: 15px;
+}

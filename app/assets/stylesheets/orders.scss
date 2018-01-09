@@ -12,11 +12,6 @@
     border-radius: 10px;
 }
 
-.btn {
-    color: white;
-    text-decoration: none;
-}
-
 section {
     float: left;
     width: 100%;
@@ -25,6 +20,7 @@ section {
     overflow: hidden;
     background: lightgoldenrodyellow;
     margin-top: 40px;
+    border-radius: 10px;
 }
 
 h3 {
@@ -47,16 +43,19 @@ h3 {
 
 .btn {
     background-color: rgb(114, 224, 114);
-    position: relative;
-    bottom: 0px;
+    position: sticky;
+    top: 2px;
     width: 100%;
+    margin-top: 10px;
     box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.3);
-    color: white;
-    margin: 5px;
-    text-align: center;
+    color: #552626;
 }
 
-#total {
-    background-color: white;
-    color: red;
+.btn a {
+    text-decoration: none;
+    color: #552626;
+}
+
+.headers {
+    font-size: 10px;
 }

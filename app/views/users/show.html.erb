@@ -1,49 +1,51 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
+<p id="notice">
+    <%= notice %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
+    <strong>Email:</strong>
+    <%= @user.email %>
 </p>
 
 <p>
-  <strong>Work phone:</strong>
-  <%= @user.work_phone %>
+    <strong>Password digest:</strong>
+    <%= @user.password_digest %>
 </p>
 
 <p>
-  <strong>Mobile phone:</strong>
-  <%= @user.mobile_phone %>
+    <strong>Work phone:</strong>
+    <%= @user.work_phone %>
 </p>
 
 <p>
-  <strong>Is active:</strong>
-  <%= @user.is_active %>
+    <strong>Mobile phone:</strong>
+    <%= @user.mobile_phone %>
 </p>
 
 <p>
-  <strong>Is admin:</strong>
-  <%= @user.is_admin %>
+    <strong>Is active:</strong>
+    <%= @user.is_active %>
 </p>
 
 <p>
-  <strong>Company:</strong>
-  <%= @user.company %>
+    <strong>Is admin:</strong>
+    <%= @user.is_admin %>
+</p>
+
+<p>
+    <strong>Company:</strong>
+    <%= @user.company %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <%= link_to 'Back', users_path %>
