@@ -49,3 +49,58 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
     <%= link_to 'Back', users_path %>
+
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-10">
+                <section>
+                    <div class="container" style="width: 450px;">
+                        <div class="card">
+                            <%= image_tag @product.image.url(:medium, {:class => 'product_image_smaller' }) %>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= @product.name %>
+                                    </h5>
+                                    <p>
+                                        <%= @product.description %>
+                                    </p>
+                                    <p class="card-text">
+                                        <%= number_to_currency(@product.price) %>
+                                    </p>
+                                </div>
+                                <div>
+                                    <%= form_tag("/add_to_shopping_cart", method: "post") do  %>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <%= submit_tag "Add to Cart", class: "btn" %>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <%= hidden_field_tag :product_id, @product.id %>
+                                                <div class="col-md-3">
+                                                    <% if can? :update, @product %>
+                                                        <%= link_to 'Edit', edit_product_path(@product), class: "btn" %>
+                                                            <% end %>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <% if can? :destroy, @product %>
+                                                        <%= link_to 'Destroy', @product, class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+                                                            <% end %>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="quantity_type_id">Sold As</label>
+                                                    <%= collection_select(@orderProduct, :quantity_type_id, QuantityType.all, :id, :name, include_blank: true) %>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="quantity">Quantity</label>
+                                                    <%= text_field(@orderProduct, :quantity) %>
+                                                </div>
+                                        </div>
+                                        <% end %>
+                                </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>

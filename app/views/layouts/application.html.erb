@@ -28,7 +28,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNav">
 
-                        <%= form_tag(products_path product_types_path, :method => :get) do %>
+                        <%= form_tag(products_path companies_path, :method => :get) do %>
                             <%= text_field_tag :term, nil, 
                     {:placeholder => "Product Search"} %>
                                 <% end %>
