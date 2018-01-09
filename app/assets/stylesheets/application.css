@@ -22,10 +22,16 @@
     color: lightgoldenrodyellow;
 }
 
+.navbar a:hover {
+    color: rgb(73, 19, 19);
+    text-decoration: none;
+    background-color: rgb(114, 224, 114);
+}
+
 .sidenav {
     height: 100%;
     /* 100% Full-height */
-    width: 250px;
+    width: 245px;
     /* 0 width - change this with JavaScript */
     position: fixed;
     /* Stay in place */
@@ -47,7 +53,7 @@
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 22px;
     color: lightgoldenrodyellow;
     display: block;
     transition: 0.3s;
@@ -57,7 +63,9 @@
 /* When you mouse over the navigation links, change their color */
 
 .sidenav a:hover {
-    color: rgb(114, 224, 114);
+    color: rgb(73, 19, 19);
+    text-decoration: none;
+    background-color: rgb(114, 224, 114);
 }
 
 

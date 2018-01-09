@@ -1,60 +1,64 @@
 <p id="notice">
     <%= notice %>
 </p>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="page-header">
-                <h1>Orders For Production on
-                    <%= Date.today %> & Delivery on
-                        <%= Date.today + 1.day %>
-                </h1>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header">
+                            <h1>Orders For Production on
+                                <%= Date.today %> & Delivery on
+                                    <%= Date.today + 1.day %>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table" id="table">
+                            <thead>
+                                <tr>
+
+                                    <th>Order Number</th>
+                                    <th>Delivery date</th>
+                                    <th>Customer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @orders.each do |order| %>
+                                    <tr>
+                                        <td>
+                                            <%= order.id %>
+                                        </td>
+                                        <td>
+                                            <%= order.delivery_date %>
+                                        </td>
+                                        <td>
+                                            <%= order.company.company_name %>
+                                        </td>
+                                        <td>
+                                            <%= link_to 'Detail', order, class: "btn-success" %>
+                                        </td>
+                                        <td>
+                                            <%= link_to 'Edit', edit_order_path(order), class: "btn-primary"  %>
+                                        </td>
+                                        <td>
+                                            <%= link_to 'Cancel', order, class: "btn-danger", method: :delete, data: { confirm: 'Are you sure you sure?' } %>
+                                        </td>
+
+                                    </tr>
+                                    <% end %>
+
+                            </tbody>
+                        </table>
+                        <hr>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <table class="table" id="table">
-                <thead>
-                    <tr>
-
-                        <th>Order Number</th>
-                        <th>Delivery date</th>
-                        <th>Customer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @orders.each do |order| %>
-                        <tr>
-                            <td>
-                                <%= order.id %>
-                            </td>
-                            <td>
-                                <%= order.delivery_date %>
-                            </td>
-                            <td>
-                                <%= order.company.company_name %>
-                            </td>
-                            <td>
-                                <%= link_to 'Detail', order, class: "btn-success" %>
-                            </td>
-                            <td>
-                                <%= link_to 'Edit', edit_order_path(order), class: "btn-primary"  %>
-                            </td>
-                            <td>
-                                <%= link_to 'Cancel', order, class: "btn-danger", method: :delete, data: { confirm: 'Are you sure you sure?' } %>
-                            </td>
-
-                        </tr>
-                        <% end %>
-
-                </tbody>
-            </table>
-            <hr>
-        </div>
+        </section>
     </div>
 </div>
-
-<%= link_to 'Shop', products_path, class: 'btn-success' %>
-    <%= link_to 'Back', orders_path, class: 'btn-danger' %>

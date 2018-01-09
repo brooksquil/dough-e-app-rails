@@ -14,16 +14,19 @@ class CompaniesController < ApplicationController
 
   # GET /companies/new
   def new
+    authorize! :create, @company   
     @company = Company.new
   end
 
   # GET /companies/1/edit
   def edit
+    authorize! :create, @company   
   end
 
   # POST /companies
   # POST /companies.json
   def create
+    authorize! :create, @company   
     @company = Company.new(company_params)
 
     respond_to do |format|
@@ -40,6 +43,8 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1
   # PATCH/PUT /companies/1.json
   def update
+    authorize! :create, @company   
+    
     respond_to do |format|
       if @company.update(company_params)
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
@@ -54,6 +59,8 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
+    authorize! :create, @company   
+    
     @company.destroy
     respond_to do |format|
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
