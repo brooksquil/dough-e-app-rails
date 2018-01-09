@@ -1,6 +1,13 @@
-<h1>Editing User</h1>
+<div class="container" style="padding: 20px;">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <h1>Edit User Information</h1>
+        </div>
+    </div>
+</div>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+    <%= link_to 'Show', @user %> |
+        <%= link_to 'Back', users_path %>

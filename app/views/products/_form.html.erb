@@ -14,64 +14,65 @@
         </div>
         <% end %>
 
+            <%= form_for(@product, :url => {:action => 'update', :id => @product.id}) do |f| %>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        <section>
+                            <div class="container-fluid form-control">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-6">
+                                    <form role="form">
 
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-10">
-                    <section>
-                        <div class="container-fluid form-control">
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-6">
-                                <form role="form">
-
-                                    <div class="form-group">
-                                        <label for="product_name">Product Name</label>
-                                        <input type="text" id="product_name" name="product_name" class="form-control" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="product_description">Description</label>
-                                        <input type="text" id="product_description" name="product_description" class="form-control" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="price">Price</label>
-                                        <input type="text" id="price" name="price" class="form-control" />
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label for="product_type_id"> Category</label>
-                                            <%= collection_select(@orderProduct, :product_type_id, ProductType.all, :id, :name, include_blank: true) %>
+                                        <div class="form-group">
+                                            <label for="product_name">Product Name</label>
+                                            <input type="text" id="product_name" name="product_name" class="form-control" />
                                         </div>
-                                        <div class="col-md-3">
-                                            <label for="quantity_type_id">Sold As</label>
-                                            <%= collection_select(@orderProduct, :quantity_type_id, QuantityType.all, :id, :name, include_blank: true) %>
+                                        <div class="form-group">
+                                            <label for="product_description">Description</label>
+                                            <input type="text" id="product_description" name="product_description" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price">Price</label>
+                                            <input type="text" id="price" name="price" class="form-control" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="product_type_id"> Category</label>
+                                                <%= collection_select(@orderProduct, :product_type_id, ProductType.all, :id, :name, include_blank: true) %>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="quantity_type_id">Sold As</label>
+                                                <%= collection_select(@orderProduct, :quantity_type_id, QuantityType.all, :id, :name, include_blank: true) %>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <label for="company_id">Company</label>
+                                                <%= collection_select(@company, :company_id, Company.all, :id, :company_name, include_blank: true) %>
+                                            </div>
                                         </div>
 
-                                        <div class="col-md-3">
-                                            <label for="company_id">Company</label>
-                                            <%= collection_select(@company, :company_id, Company.all, :id, :company_name, include_blank: true) %>
+                                        <div class="field">
+                                            <label for="image">Image</label>
+                                            <%= form.file_field(:image, {:class => 'form-control'}) %>
                                         </div>
-                                    </div>
-
-                                    <div class="field">
-                                        <label for="image">Image</label>
-                                        <%= form.file_field(:image, {:class => 'form-control'}) %>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <label for="is_active">
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label for="is_active">
                                                 Active Product?
                                               <input type="checkbox" value="1" id="is_active" name="is_active" class="form-control-inline">
                                             </label>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="actions">
-                                        <%= form.submit %>
-                                    </div>
-                                    <% end %>
-                                </form>
+                                        <div class="actions">
+                                            <%= form.submit %>
+                                        </div>
+                                        <% end %>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
-            </div>
+                <% end %>

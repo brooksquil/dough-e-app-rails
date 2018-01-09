@@ -2,105 +2,55 @@
     <%= notice %>
 </p>
 
-<p>
-    <strong>First name:</strong>
-    <%= @user.first_name %>
-</p>
 
-<p>
-    <strong>Last name:</strong>
-    <%= @user.last_name %>
-</p>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <section>
+            <div class="container" style="width: 450px;">
+                <div class="card">
 
-<p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-</p>
-
-<p>
-    <strong>Password digest:</strong>
-    <%= @user.password_digest %>
-</p>
-
-<p>
-    <strong>Work phone:</strong>
-    <%= @user.work_phone %>
-</p>
-
-<p>
-    <strong>Mobile phone:</strong>
-    <%= @user.mobile_phone %>
-</p>
-
-<p>
-    <strong>Is active:</strong>
-    <%= @user.is_active %>
-</p>
-
-<p>
-    <strong>Is admin:</strong>
-    <%= @user.is_admin %>
-</p>
-
-<p>
-    <strong>Company:</strong>
-    <%= @user.company %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to 'Back', users_path %>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <%= @user.first_name %>
+                        </h4>
+                        <p>
+                            <strong>Email:</strong>
+                            <%= @user.email %>
+                        </p>
 
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-10">
-                <section>
-                    <div class="container" style="width: 450px;">
-                        <div class="card">
-                            <%= image_tag @product.image.url(:medium, {:class => 'product_image_smaller' }) %>
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <%= @product.name %>
-                                    </h5>
-                                    <p>
-                                        <%= @product.description %>
-                                    </p>
-                                    <p class="card-text">
-                                        <%= number_to_currency(@product.price) %>
-                                    </p>
-                                </div>
-                                <div>
-                                    <%= form_tag("/add_to_shopping_cart", method: "post") do  %>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <%= submit_tag "Add to Cart", class: "btn" %>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <%= hidden_field_tag :product_id, @product.id %>
-                                                <div class="col-md-3">
-                                                    <% if can? :update, @product %>
-                                                        <%= link_to 'Edit', edit_product_path(@product), class: "btn" %>
-                                                            <% end %>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <% if can? :destroy, @product %>
-                                                        <%= link_to 'Destroy', @product, class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
-                                                            <% end %>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="quantity_type_id">Sold As</label>
-                                                    <%= collection_select(@orderProduct, :quantity_type_id, QuantityType.all, :id, :name, include_blank: true) %>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="quantity">Quantity</label>
-                                                    <%= text_field(@orderProduct, :quantity) %>
-                                                </div>
-                                        </div>
-                                        <% end %>
-                                </div>
-                        </div>
+
+                        <p>
+                            <strong>Work phone:</strong>
+                            <%= @user.work_phone %>
+                        </p>
+
+                        <p>
+                            <strong>Mobile phone:</strong>
+                            <%= @user.mobile_phone %>
+                        </p>
+
+                        <p>
+                            <strong>Is active:</strong>
+                            <%= @user.is_active %>
+                        </p>
+
+                        <p>
+                            <strong>Admin:</strong>
+                            <%= @user.admin %>
+                        </p>
+
+                        <p>
+                            <strong>Company:</strong>
+                            <%= @user.company %>
+                        </p>
+
+
                     </div>
-                </section>
+                    <%= link_to 'Edit', edit_user_path(@user), class: 'btn' %>
+                </div>
             </div>
-        </div>
+        </section>
+    </div>
+</div>
