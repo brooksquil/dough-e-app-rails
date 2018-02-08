@@ -1,25 +1,17 @@
-# README
+# dough-e - Wholesale Bakery Management Application
+## A Ruby on Rails Full-Stack App
+## Purpose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An intuitive easy to use interface with differing authorizations for customers & administrators. 
+## Tech:
+* Ruby 2.4.2
+* Rails 5.1.4
+* SQLite3 
+## To Run in Development:
+1. Clone or Download
+2. Run ```bundle install```
+3. Run ```rails db:migrate```
+4. Run ```rails db:seed```
+5. Run server - ```rails s```
+6. Load site on localhost:3000
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# dough-e-app-rails
