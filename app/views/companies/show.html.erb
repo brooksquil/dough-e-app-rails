@@ -1,84 +1,80 @@
 <p id="notice">
     <%= notice %>
+</p>
 
+<p>
+    <strong>Company name:</strong>
+    <%= @company.company_name %>
+</p>
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-10">
-                <section>
-                    <div class="container" style="width: 450px;">
-                        <div class="card">
+<p>
+    <strong>Shipping address:</strong>
+    <%= @company.shipping_address %>
+</p>
 
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <%= @company.company_name %>
-                                </h5>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <strong>Shipping Address:</strong>
-                                        <p>
-                                            <%= @company.shipping_address %>
-                                        </p>
-                                        <p class="card-text">
-                                            <%= @company.shipping_address_2 %>
+<p>
+    <strong>Shipping address 2:</strong>
+    <%= @company.shipping_address_2 %>
+</p>
 
-                                        </p>
-                                        <p class="card-text">
-                                            <%= @company.shipping_city %>
+<p>
+    <strong>Shipping city:</strong>
+    <%= @company.shipping_city %>
+</p>
 
-                                        </p>
-                                        <p class="card-text">
-                                            <%= @company.shipping_zipcode %>
+<p>
+    <strong>Shipping state:</strong>
+    <%= @company.shipping_state %>
+</p>
 
-                                        </p>
-                                        <p class="card-text">
-                                            <strong>Shipping Notes:</strong>
+<p>
+    <strong>Shipping zipcode:</strong>
+    <%= @company.shipping_zipcode %>
+</p>
 
-                                            <%= @company.shipping_notes %>
+<p>
+    <strong>Shipping notes:</strong>
+    <%= @company.shipping_notes %>
+</p>
 
-                                        </p>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <strong>Billing Address:</strong>
-                                        <p>
-                                            <%= @company.billing_street_address %>
-                                        </p>
-                                        <p class="card-text">
-                                            <%= @company.billing_address_2 %>
+<p>
+    <strong>Billing street address:</strong>
+    <%= @company.billing_street_address %>
+</p>
 
-                                        </p>
-                                        <p class="card-text">
-                                            <%= @company.shipping_city %>
+<p>
+    <strong>Billing address 2:</strong>
+    <%= @company.billing_address_2 %>
+</p>
 
-                                        </p>
-                                        <p class="card-text">
-                                            <%= @company.billing_zipcode %>
+<p>
+    <strong>Billing state:</strong>
+    <%= @company.billing_state %>
+</p>
 
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="card-text">
-                                    <strong>Email:</strong>
-                                    <%= @company.email %>
+<p>
+    <strong>Billing zipcode:</strong>
+    <%= @company.billing_zipcode %>
+</p>
 
-                                </p>
-                                <p class="card-text">
-                                    <strong>Phone:</strong>
-                                    <%= @company.company_phone %>
-                                </p>
-                                <p>
-                                    <strong>Payment terms:</strong>
-                                    <%= @company.payment_terms %>
-                                </p>
-                                <p>
-                                    <strong>Customer is Active?</strong>
-                                    <%= @company.is_active %>
-                                </p>
+<p>
+    <strong>Company phone:</strong>
+    <%= @company.company_phone %>
+</p>
 
-                            </div>
+<p>
+    <strong>Company email:</strong>
+    <%= @company.email %>
+</p>
 
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
+<p>
+    <strong>Payment terms:</strong>
+    <%= @company.payment_terms %>
+</p>
+<p>
+    <strong>Customer is Active?</strong>
+    <%= @company.is_active %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
