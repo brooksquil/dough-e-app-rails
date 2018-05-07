@@ -19,3 +19,10 @@ Dough-e will be intuitive for even basic computer users. It allows quick access 
 5. Run server - ```rails s```
 6. Load site on localhost:3000
 
+## Work In Progress
+
+Follow my progress on Trello: <https://trello.com/b/yA7J7o0V>
+
+Check out the current deployment - Coming Soon
+
+
