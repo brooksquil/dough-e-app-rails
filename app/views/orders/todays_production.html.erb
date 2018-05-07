@@ -40,14 +40,12 @@
                                         <td>
                                             <%= order.company.company_name %>
                                         </td>
+
                                         <td>
-                                            <%= link_to 'Detail', order, class: "btn-success" %>
+                                            <%= link_to 'Edit', edit_order_path(order), class: "btn"  %>
                                         </td>
                                         <td>
-                                            <%= link_to 'Edit', edit_order_path(order), class: "btn-primary"  %>
-                                        </td>
-                                        <td>
-                                            <%= link_to 'Cancel', order, class: "btn-danger", method: :delete, data: { confirm: 'Are you sure you sure?' } %>
+                                            <%= link_to 'Cancel', order, class: "btn", method: :delete, data: { confirm: 'Are you sure you sure?' } %>
                                         </td>
 
                                     </tr>
