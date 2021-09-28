@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{brooksquil}/#{dough-e-app-rails}" unless repo_name.include?("/")
-  "https://github.com/#{brooksquil/dough-e-app-rails}.git"
-end
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -30,7 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 #Use image upload
-gem "paperclip", "~> 5.2.1"
+gem "paperclip"
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce4cb6366980c055ee'
 #Use authorization based on admin
 gem "cancan"
 
