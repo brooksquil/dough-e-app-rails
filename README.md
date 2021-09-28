@@ -16,13 +16,10 @@ Dough-e will be intuitive for even basic computer users. It allows quick access 
 2. Run ```bundle install```
 3. Run ```rails db:migrate```
 4. Run ```rails db:seed```
-5. Run server - ```rails s```
-6. Load site on localhost:3000
+5. Run ```brew install imagemagick```
+6. Run server - ```rails s```
+7. Load site on localhost:3000
 
-## Work In Progress
 
-Follow my progress on Trello: <https://trello.com/b/yA7J7o0V>
-
-Check out the current deployment - Coming Soon
 
 
